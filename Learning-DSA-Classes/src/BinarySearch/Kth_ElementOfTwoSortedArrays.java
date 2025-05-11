@@ -25,7 +25,7 @@ public class Kth_ElementOfTwoSortedArrays {
             if(l1<=r2&&l2<=r1){
                 return Math.max(l1,l2);
             }else if(l1>r2){
-                end=mid1-11;
+                end=mid1-1;
             }else{
                 start=mid1+1;
             }
