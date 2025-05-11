@@ -2,7 +2,7 @@ package Recursion;
 
 public class CountZeros {
         public static void main(String[] args) {
-            System.out.println(count(30210004));
+            System.out.println(count(302100));
         }
 
         static int count(int n) {
