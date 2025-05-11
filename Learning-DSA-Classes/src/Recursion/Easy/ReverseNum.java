@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Easy;
 
 public class ReverseNum {
     static int sum=0;
@@ -14,5 +14,4 @@ public class ReverseNum {
         revN1(12345);
         System.out.println(sum);
     }
-
 }

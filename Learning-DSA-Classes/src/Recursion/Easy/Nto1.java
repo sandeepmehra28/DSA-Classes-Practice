@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Easy;
 
 public class Nto1 {
     public static void main(String[] args) {
@@ -26,5 +26,4 @@ public class Nto1 {
         BothCall(n-1);
         System.out.print(n+" ");//after remove in the stack then print the value
     }
-
 }

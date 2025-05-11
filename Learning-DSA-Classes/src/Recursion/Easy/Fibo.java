@@ -1,6 +1,6 @@
-package Recursion;
+package Recursion.Easy;
 
-public class fibo {
+public class Fibo {
     public static void main(String[] args) {
         int ans = fibon(4);
         System.out.println(ans);
