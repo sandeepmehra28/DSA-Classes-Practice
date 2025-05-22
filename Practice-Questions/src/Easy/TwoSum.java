@@ -23,7 +23,7 @@ public class TwoSum {
         for(int i =0;i<nums.length;i++){
             int com =target-nums[i];
             if(map.containsKey(com)){
-                return new int[]{map.get(com),i};
+                return new int[]{com,nums[i]};
             }
             map.put(nums[i],i);
         }
