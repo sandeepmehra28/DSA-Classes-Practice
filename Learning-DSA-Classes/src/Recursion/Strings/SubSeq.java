@@ -12,6 +12,15 @@ public class SubSeq {
         subseq(p+ch,up.substring(1));
         subseq(p,up.substring(1));
     }
+    // second approach
+    static void subseq2(String p, String up){
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+        subseq(p+up.charAt(0),up.substring(1));
+        subseq(p,up.substring(1));
+    }
 }
 
 
