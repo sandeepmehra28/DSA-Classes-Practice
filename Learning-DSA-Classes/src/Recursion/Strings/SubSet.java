@@ -25,6 +25,8 @@ public class SubSet {
         }
         return outer;
     }
+
+    //sub set duplicates
     static List<List<Integer>> subsetDuplicate(int[] arr) {
         Arrays.sort(arr);
         List<List<Integer>> outer = new ArrayList<>();
