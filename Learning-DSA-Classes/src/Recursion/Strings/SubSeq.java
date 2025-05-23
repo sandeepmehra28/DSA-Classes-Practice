@@ -1,5 +1,4 @@
 package Recursion.Strings;
-
 public class SubSeq {
     public static void main(String[] args) {
        subseq("","abc");
@@ -14,6 +13,8 @@ public class SubSeq {
         subseq(p,up.substring(1));
     }
 }
+
+
 //  * = take it , # ignore it
 //                      ("", "abc")
 //                 / *                \ #
