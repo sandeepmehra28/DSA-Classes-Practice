@@ -14,7 +14,7 @@ public class SubSeq {
         subseq(p,up.substring(1));
     }
 }
-//  * = take it , # ignore it
+//  *  take it , # ignore it
 //                      ("", "abc")
 //                 / *                \ #
 //              ("a","bc")          ("","bc")
