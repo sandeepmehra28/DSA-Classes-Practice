@@ -12,6 +12,8 @@ public class SubSet {
             System.out.print("  "+List);
         }
     }
+
+    //subset for single subset
     static List<List<Integer>> subset(int[] arr) {
         List<List<Integer>> outer = new ArrayList<>();
         outer.add(new ArrayList<>());
