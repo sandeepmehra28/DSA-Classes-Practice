@@ -6,9 +6,9 @@ import java.util.List;
 public class SubSeq2 {
     public static void main(String[] args) {
         findSubSeq("","abc");
-        System.out.println(AL);
-        System.out.println(findSeq2("","abc"));
-        subseqAscii("", "abc");
+System.out.println(AL);
+//        System.out.println(findSeq2("","abc"));
+//        subseqAscii("", "abc");
     }
 
     static List<String> AL = new ArrayList<>();

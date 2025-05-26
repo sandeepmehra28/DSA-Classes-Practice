@@ -6,7 +6,7 @@ public class prem2 {
     public static void main(String[] args) {
       String s1 ="abc";
       String s2 ="lecabee";
-        System.out.println(checkInclusion(s1,s2));
+        System.out.println(helper("","abc"));
     }
     public static boolean checkInclusion(String s1, String s2) {
         HashSet<String> uniquePrem = helper("",s2);
