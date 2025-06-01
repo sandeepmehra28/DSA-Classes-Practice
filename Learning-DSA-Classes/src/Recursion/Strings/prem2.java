@@ -14,7 +14,7 @@ public class prem2 {
             return true;
         }else{
             return false;
-        }
+        }//
     }
     static HashSet<String> helper(String p, String up){
         HashSet<String> result = new HashSet<>();
