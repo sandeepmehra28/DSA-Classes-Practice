@@ -2,7 +2,7 @@ package Basic_Questions;
 
 public class Patterns {
     public static void main(String[] args) {
-        p5(5);
+        p8(5);
     }
     static void p1(int n){
         for (int i = 0;i<=n;i++){
@@ -81,6 +81,54 @@ public class Patterns {
                 }else {
                     System.out.print("  ");
                 }
+            }
+            System.out.println();
+        }
+    }
+    static void p6(int n){
+        for (int i = 1; i <=n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j==n+1){
+                    System.out.print("*");
+                }else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void p7(int n){
+        for (int i = 1; i <=n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j==n+1||i==j){
+                    System.out.print("*");
+                }else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void p8(int n){
+        int os = n/2;
+        int is = -1;
+        for (int i = 1; i <=n; i++) {
+            for(int j =1;j<=os;j++){
+                System.out.print("\t");
+            }
+            System.out.print("* ");
+            for (int j = 1; j <=is; j++) {
+                System.out.print("\t");
+            }
+            if(i>1&&i<n){
+                System.out.print("* ");
+            }
+            if(i<=n/2){
+                os--;
+                is+=2;
+            }else{
+                os++;
+                is-=2;
             }
             System.out.println();
         }
