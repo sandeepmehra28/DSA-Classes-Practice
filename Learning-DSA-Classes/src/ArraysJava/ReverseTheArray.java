@@ -1,5 +1,6 @@
 package ArraysJava;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ReverseTheArray {
@@ -8,6 +9,8 @@ public class ReverseTheArray {
         System.out.println("Original Array: "+Arrays.toString(arr));
         re(arr);
         System.out.println("After reverse: "+Arrays.toString(arr));
+
+
     }
     static void re(int[] arr){
         int l=0;

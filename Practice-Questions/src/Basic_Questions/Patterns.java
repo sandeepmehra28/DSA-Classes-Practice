@@ -19,7 +19,7 @@ public class Patterns {
             for (int j = 1; j <=space; j++) {
                 System.out.print(" ");
             }
-            for (int j = 1; j <= st; j++) {
+            for (int j = 1; j <= st; j++    ) {
                 System.out.print("*");
             }
             space--;
@@ -29,6 +29,11 @@ public class Patterns {
 
     }
     static void p3(int n){
+        //     *
+        //   * * *
+        // * * * * *
+        //   * * *
+        //     *
         int sp  = n/2;
         int st = 1;
         for (int i = 1; i <= n; i++) {
@@ -72,6 +77,12 @@ public class Patterns {
             }
             System.out.println();
         }
+      // *** ***
+     //  **   **
+     //  *     *
+//       **   **
+//       *** ***
+
     }
     static void p5(int n){
         for (int i = 0; i < n; i++) {

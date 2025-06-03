@@ -1,6 +1,4 @@
 package StackP;
-
-import java.sql.SQLOutput;
 import java.util.Stack;
 
 public class BalancedBrackets {
@@ -16,31 +14,27 @@ public class BalancedBrackets {
                 st.push(ch);
             } else if (ch==')') {
              boolean v = handel(st,'(');
-             if(v==false){
-                 return v;
+             if(!v){
+                 return false;
              }
             } else if (ch==']') {
-                boolean v = handel(st,'(');
-                if(v==false){
-                    return v;
+                boolean v = handel(st,'[');
+                if(!v){
+                    return false;
                 }
             } else if (ch=='}') {
-                boolean v = handel(st,'(');
-                if(v==false){
-                    return v;
+                boolean v = handel(st,'{');
+                if(!v){
+                    return false;
                 }
             }else {
 
             }
         }
-        if(st.size()==0){
-            return true;
-        }else {
-            return false;
-        }
+        return st.isEmpty();
     }
     static boolean handel(Stack<Character> st, char ch){
-        if(st.size()==0){
+        if(st.isEmpty()){
             return false;
         } else if (st.peek()!=ch) {
             return false;
