@@ -15,11 +15,6 @@ public class Sliding_Window_Maximum {
                 st.pop();
             }
             temp[i]=st.isEmpty()?arr.length:st.peek();
-//            if (st.isEmpty()) {
-//                temp[i] = arr.length;
-//            } else {
-//                temp[i] = st.peek();
-//            }
             st.push(i);
         }
         int j =0;
