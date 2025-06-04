@@ -3,7 +3,7 @@ package StackP;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Sliding_window_Max_in_ArrayList {
+public class Sliding_window_Max_in_Array {
     public static void main(String[] args) {
         long[] arr= {1, 2, 3, 1, 4, 5, 2, 3, 6};
         int k = 3;

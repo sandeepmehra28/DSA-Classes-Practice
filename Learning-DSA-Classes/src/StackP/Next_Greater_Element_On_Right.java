@@ -22,11 +22,6 @@ public class Next_Greater_Element_On_Right {
                 st.pop();
             }
             temp[i]=st.isEmpty()?-1:st.peek();
-//            if(st.isEmpty()){
-//                tempA[i]=-1;
-//            }else{
-//                tempA[i]=st.peek();
-//            }
             st.push(arr[i]);
         }
         return temp;
