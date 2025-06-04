@@ -2,7 +2,6 @@ package StackP;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
 public class Next_G_E_Using_ArrayList {
     public static void main(String[] args) {
         int[] arr = {6, 8, 0, 1, 3};
