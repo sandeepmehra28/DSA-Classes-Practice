@@ -1,4 +1,4 @@
-package StackP;
+package Stack;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -19,11 +19,6 @@ public class Sliding_window_Max_in_Array {
                 st.pop();
             }
             temp[i] = st.isEmpty()? arr.length : st.peek();
-//            if(st.isEmpty()) {
-//                temp[i] = arr.length;
-//            }else{
-//                temp[i]=st.peek();
-//            }
             st.push(i);
         }
         long[] result = new long[arr.length - k + 1];
