@@ -3,153 +3,57 @@ package Stack;
 import java.util.Stack;
 
 public class Infix_Ev {
-    public static void main(String[] args) {
-        String o = "100 * 2 + 12";
-        System.out.println(pro(o));
+
+    public static int precedence(char op) {
+        if (op == '+' || op == '-') return 1;
+        if (op == '*' || op == '/') return 2;
+        return 0;
     }
-    static int pro(String expr) {
-        Stack<Integer> operands = new Stack<>();
-        Stack<Character> operators = new Stack<>();
 
-        for (int i = 0; i < expr.length(); i++) {
-            char ch = expr.charAt(i);
+    public static int applyOp(int a, int b, char op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
+        }
+        return 0;
+    }
 
-            if (ch == '(') {
-                operators.push(ch);
-            } else if (Character.isDigit(ch)) {
+    public static void main(String[] args) {
+        String str = "10*20+10";
+        Stack<Integer> val = new Stack<>();
+        Stack<Character> ops = new Stack<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (ch>='0' && ch<= '9') {
                 int num = 0;
-                // Build multi-digit number
-                while (i < expr.length() && Character.isDigit(expr.charAt(i))) {
-                    num = num * 10 + (expr.charAt(i) - '0');
+                while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+                    num = num * 10 + (str.charAt(i) - '0');
                     i++;
                 }
-                i--; // adjust for loop increment
-                operands.push(num);
-            } else if (ch == ')') {
-                while (!operators.isEmpty() && operators.peek() != '(') {
-                    int v2 = operands.pop();
-                    int v1 = operands.pop();
-                    char op = operators.pop();
-                    operands.push(operations(v1, v2, op));
+                i--;
+                val.push(num);
+            } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                while (!ops.isEmpty() && precedence(ops.peek()) >= precedence(ch)) {
+                    int b = val.pop();
+                    int a = val.pop();
+                    char op = ops.pop();
+                    val.push(applyOp(a, b, op));
                 }
-                if (!operators.isEmpty()) {
-                    operators.pop();
-                }
-            } else if (isOperator(ch)) {
-                while (!operators.isEmpty() && operators.peek() != '(' &&
-                        precedence(ch) <= precedence(operators.peek())) {
-                    int v2 = operands.pop();
-                    int v1 = operands.pop();
-                    char op = operators.pop();
-                    operands.push(operations(v1, v2, op));
-                }
-                operators.push(ch);
+                ops.push(ch);
             }
         }
 
-        // Final evaluation
-        while (!operators.isEmpty()) {
-            int v2 = operands.pop();
-            int v1 = operands.pop();
-            char op = operators.pop();
-            operands.push(operations(v1, v2, op));
+        while (!ops.isEmpty()) {
+            int b = val.pop();
+            int a = val.pop();
+            char op = ops.pop();
+            val.push(applyOp(a, b, op));
         }
 
-        return operands.pop();
-    }
-static boolean isOperator(char ch){
-    return ch == '+' || ch == '-' || ch == '*' || ch == '/';
-}
-    static int precedence(char operator) {
-        return  (operator == '+' || operator == '-') ? 1 : 2;
-    }
-
-    static int operations(int n1 , int n2, char operator){
-        if(operator=='+'){
-            return n1+n2;
-        } else if (operator=='-') {
-            return n1-n2;
-        } else if (operator=='*') {
-            return n1*n2;
-        }else {
-            return n1/n2;
-        }
+        System.out.println(val.pop());
     }
 }
-
-
-
-//package Stack;
-//
-//import java.util.Stack;
-//
-//public class Infix_Ev {
-//    public static void main(String[] args) {
-//        String o = "2+6*4/8";
-//        System.out.println(pro(o)); // Should print 5
-//    }
-//
-//    static int pro(String expr) {
-//        Stack<Integer> operands = new Stack<>();
-//        Stack<Character> operators = new Stack<>();
-//
-//        for (int i = 0; i < expr.length(); i++) {
-//            char ch = expr.charAt(i);
-//
-//            if (ch == '(') {
-//                operators.push(ch);
-//            } else if (Character.isDigit(ch)) {
-//                operands.push(ch - '0');
-//            } else if (ch == ')') {
-//                while (!operators.isEmpty() && operators.peek() != '(') {
-//                    int v2 = operands.pop();
-//                    int v1 = operands.pop();
-//                    char op = operators.pop();
-//                    operands.push(operations(v1, v2, op));
-//                }
-//                if (!operators.isEmpty()) {
-//                    operators.pop(); // pop '('
-//                }
-//            } else if (isOperator(ch)) {
-//                while (!operators.isEmpty() && operators.peek() != '(' &&
-//                        precedence(ch) <= precedence(operators.peek())) {
-//                    int v2 = operands.pop();
-//                    int v1 = operands.pop();
-//                    char op = operators.pop();
-//                    operands.push(operations(v1, v2, op));
-//                }
-//                operators.push(ch);
-//            }
-//        }
-//
-//        // Final evaluation
-//        while (!operators.isEmpty()) {
-//            int v2 = operands.pop();
-//            int v1 = operands.pop();
-//            char op = operators.pop();
-//            operands.push(operations(v1, v2, op));
-//        }
-//
-//        return operands.pop();
-//    }
-//
-//    static boolean isOperator(char ch) {
-//        return ch == '+' || ch == '-' || ch == '*' || ch == '/';
-//    }
-//
-//    static int precedence(char operator) {
-//        if (operator == '+' || operator == '-') return 1;
-//        if (operator == '*' || operator == '/') return 2;
-//        return 0;
-//    }
-//
-//    static int operations(int n1, int n2, char operator) {
-//        switch (operator) {
-//            case '+': return n1 + n2;
-//            case '-': return n1 - n2;
-//            case '*': return n1 * n2;
-//            case '/': return n1 / n2;
-//            default: throw new IllegalArgumentException("Invalid operator: " + operator);
-//        }
-//    }
-//}
