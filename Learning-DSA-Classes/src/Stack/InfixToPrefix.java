@@ -54,4 +54,7 @@ public class InfixToPrefix {
         if(ch=='*'||ch=='/')return 2;
          return 0;
         }
-    }
+
+}
+
+

@@ -5,10 +5,10 @@ import java.util.HashSet;
 
 public class permutation {
     public static void main(String[] args) {
-//        permu("","ABC");
-//        findPermutation("ABSG");
-        ArrayList<String> permutations = findPermutation("aa");
-        System.out.println(permutations);
+        permu("","ABC");
+ //       findPermutation("ABSG");
+//        ArrayList<String> permutations = findPermutation("aa");
+//        System.out.println(permutations);
     }
     static void permu(String p,String up){
         if(up.length()==0){

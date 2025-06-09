@@ -3,11 +3,11 @@ package Stack;
 import java.util.Stack;
 
 public class Celebrity_Problem {
-    public static void main(String[] args) {
+    public static void main() {
      int[][] mat={{1, 1, 0}, {0, 1, 0}, {0, 1, 1}};
         System.out.println(celebrity(mat));
     }
-     static int celebrity(int arr[][]) {
+     static int celebrity(int[][] arr) {
          Stack<Integer> st = new Stack<>();
          for(int i =0;i<arr.length;i++){
              st.push(i);

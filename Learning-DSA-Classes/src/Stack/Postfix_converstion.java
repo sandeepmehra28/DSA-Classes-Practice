@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Postfix_converstion {
     public static void main() {
-        String op ="ab*c+";
+        String op ="ABC/-AK/L-*";
         Stack<Integer> vs = new Stack<>();
         Stack<String> infix = new Stack<>();
         Stack<String> postfix = new Stack<>();
