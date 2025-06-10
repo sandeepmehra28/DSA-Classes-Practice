@@ -14,7 +14,7 @@ public class Next_G_E_Using_ArrayList {
         st.push(arr[arr.length-1]);
         temp[arr.length-1]=-1;
         for(int i = arr.length-2;i>=0;i--){
-            while(!st.isEmpty()&&arr[i]>=st.peek()){
+            while(!st.isEmpty()&&arr[i]>st.peek()){
                 st.pop();
             }
             temp[i] = st.isEmpty()?-1:st.peek();

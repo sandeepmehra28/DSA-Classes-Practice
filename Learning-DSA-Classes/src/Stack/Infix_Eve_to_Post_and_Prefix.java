@@ -30,7 +30,7 @@ public class Infix_Eve_to_Post_and_Prefix {
                 }
                 opr.pop();
             } else if (ch=='+'||ch=='-'||ch=='*'||ch=='/') {
-                while(opr.size()>0 &&  opr.peek()!='(' && pre(ch)<=pre(opr.peek())){
+                while(!opr.isEmpty() &&  opr.peek()!='(' && pre(ch)<=pre(opr.peek())){
                     char c = opr.pop();
                     String postv2 = postfix.pop();
                     String postv1 = postfix.pop();
