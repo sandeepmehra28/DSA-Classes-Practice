@@ -14,7 +14,7 @@ public class Stock_Span_ArrayList {
         st.push(0);
         temp[0]=1;
         for(int i = 1;i<arr.length;i++){
-            while (st.size()>0&&arr[i]>arr[st.peek()]){
+            while (st.size()>0&&arr[i]>=arr[st.peek()]){
                 st.pop();
             }
             if(st.isEmpty()){

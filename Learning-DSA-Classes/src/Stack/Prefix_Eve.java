@@ -21,4 +21,22 @@ public class Prefix_Eve {
         }
         System.out.println(st.peek());
     }
+    // prefix to postfix conversion
+    static String preToPost(String str) {
+        Stack<String> postfix = new Stack<>();
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            char ch = str.charAt(i);
+
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+                postfix.push(ch + "");
+            } else if (ch == '+' || ch == '-' || ch == '/' || ch == '*') {
+                String op1 = postfix.pop();
+                String op2 = postfix.pop();
+                postfix.push(op1 + op2 + ch);
+            }
+        }
+
+        return postfix.peek();
+    }
 }
