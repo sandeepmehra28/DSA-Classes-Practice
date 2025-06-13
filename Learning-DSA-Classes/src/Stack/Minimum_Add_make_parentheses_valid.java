@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Minimum_Add_make_parentheses_valid {
     public static void main(String[] args) {
-        String str= "((()";
+        String str= "())";
         System.out.println(makeV(str));
     }
     static int makeV(String str){
