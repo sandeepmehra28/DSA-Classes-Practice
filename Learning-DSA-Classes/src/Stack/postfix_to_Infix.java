@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class postfix_to_Infix {
     public static void main(String[] args) {
-        String op = "abc+/*";
-        System.out.println(postToInfix(op));
+            String op = "abc+/*";
+            System.out.println(postToInfix(op));
     }
     static String postToInfix(String exp) {
         // code here
