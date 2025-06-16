@@ -1,21 +1,29 @@
 package LinkedList;
 
-import java.util.LinkedList;
-import java.util.Stack;
 
 public class understanding {
-    public static void main(String[] args) {
-        LinkedList<Integer> ll = new LinkedList<>();
-        ll.add(1);
-        ll.add(2);
-        ll.add(3);
-        ll.add(4);
-        ll.add(5);
-        System.out.println(ll);
-        Stack<Integer> st =  new Stack<>();
-        for(int i = ll.size()-1;i>=0;i--){
-            st.push(ll.get(i));
+    public  static class Node{
+        int data;
+        Node next;
+        Node(int x){
+            this.data = x;
         }
-        System.out.println(st);
+    }
+    public static void main(String[] args) {
+        Node n1 = new Node(10);
+        Node n2 = new Node(20);
+        Node n3 = new Node(30);
+        Node n4 = new Node(40);
+        Node n5 = new Node(50);
+        //  n1->n2->n3->n4->n5->
+        n1.next  = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        Node temp = n1;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
     }
 }
