@@ -2,7 +2,7 @@ package BinarySearch;
 
 public class AggressiveCows2 {
     public static void main(String[] args) {
-        int [] stalls = {2,4,8,11,13,15};
+        int [] stalls = {10, 1, 2, 7, 5};
         int cows = 3;
         int ans = AgCow(stalls,cows);
         System.out.println(ans);
@@ -26,10 +26,10 @@ public class AggressiveCows2 {
         int co =1;
         int po=arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if(arr[i]-po>=mid){
+            if(arr[i]-po>mid){
                 co++;
                 po = arr[i];
-            }if(co>=cow){
+            }if(co>cow){
                 return true;
             }
         }
