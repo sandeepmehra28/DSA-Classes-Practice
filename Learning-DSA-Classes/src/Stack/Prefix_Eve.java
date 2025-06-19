@@ -39,4 +39,20 @@ public class Prefix_Eve {
 
         return postfix.peek();
     }
+    static String preToInfix(String str) {
+        Stack<String> infix = new Stack<>();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            char ch = str.charAt(i);
+
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || Character.isDigit(ch)) {
+                infix.push(ch + "");
+            } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^') {
+                String op1 = infix.pop();
+                String op2 = infix.pop();
+                String expr = "(" + op1 + ch + op2 + ")";
+                infix.push(expr);
+            }
+        }
+        return infix.peek();
+    }
 }

@@ -1,7 +1,6 @@
 package Stack;
 
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class Remove_Consecutive_Subsequences {
     public static void main(String[] args) {

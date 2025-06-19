@@ -10,8 +10,8 @@ public class InfixtoPost2 {
         return 0;
     }
     public static void main(String[] args) {
-        String str = "a+b*(c^d-e)^(f+g*h)-i";
-        String str1 = "a+b*c";
+            String str = "a+b*(c^d-e)^(f+g*h)-i";
+        String str1 = "a^b*c";
         System.out.println(con(str1));
     }
     static String con(String str){
