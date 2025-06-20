@@ -13,9 +13,9 @@ public class queue_Implement_using_linkedList2 {
        private Node head , tail;
        private int  size;
        Queue(){
-           head = null;
-           tail = null;
-           size=0;
+               head = null;
+               tail = null;
+               size=0;
        }
        void push(int val){
            Node temp = new Node(val);
