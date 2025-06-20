@@ -1,6 +1,7 @@
 package Easy;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class TwoSum {
     public static void main(String[] args) {
@@ -29,5 +30,15 @@ public class TwoSum {
             map.put(nums[i],i);
         }
         return null;
+    }
+    boolean twoSum3(int arr[], int target) {
+        HashSet<Integer> seen = new HashSet<>();
+        for(int i : arr){
+            if(seen.contains(target-i)){
+                return true;
+            }
+            seen.add(i);
+        }
+        return false;
     }
 }

@@ -1,7 +1,6 @@
 package LinkedList;
 
-import javax.management.ValueExp;
-import java.util.*;
+
 
 public class understanding_using_generics {
    static class Node<T>{
