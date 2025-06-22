@@ -33,7 +33,7 @@ public class Deletion_In_LinkedList {
             }
             if(temp!=null && counter==position){
                 temp.data = data;
-                System.out.println("update successfull");
+                System.out.println("update successful");
             }else{
                 System.out.println("size is smaller then your list");
             }
@@ -147,7 +147,6 @@ public class Deletion_In_LinkedList {
             }
             if(position==size+1) {
                 insertTail(data);
-                return;
             }else{
                 Node<Integer> newNode = new Node<>(data);
                 Node<Integer> temp = head;
