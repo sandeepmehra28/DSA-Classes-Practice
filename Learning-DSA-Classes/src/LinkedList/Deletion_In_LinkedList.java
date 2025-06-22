@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.HashSet;
+
 public class Deletion_In_LinkedList {
     static class Node<T>{//my node class
         T data;
@@ -166,6 +168,17 @@ public class Deletion_In_LinkedList {
                 temp = temp.next;
             }
             System.out.println();
+        }
+        //detect loop
+        public static boolean detectLoop(Node head) {
+            HashSet<Node> st = new HashSet<>();
+            while (head != null) {
+                if (st.contains(head))
+                    return true;
+                st.add(head);
+                head = head.next;
+            }
+            return false;
         }
     }
 
