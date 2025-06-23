@@ -1,7 +1,6 @@
 package LinkedList;
 
 import java.util.HashSet;
-
 public class Deletion_In_LinkedList {
     static class Node<T>{//my node class
         T data;
@@ -91,7 +90,6 @@ public class Deletion_In_LinkedList {
             }
             if(position==size){
                 deleteTail();
-                return;
             }else{
                 int counter = 1;
                 Node<Integer> pre = null;
