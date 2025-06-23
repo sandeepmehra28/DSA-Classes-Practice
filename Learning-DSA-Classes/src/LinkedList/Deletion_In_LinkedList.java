@@ -179,6 +179,30 @@ public class Deletion_In_LinkedList {
             }
             return false;
         }
+        //searching
+        boolean searching(int target){
+            Node<Integer> temp = head;
+            while(temp!=null){
+                if(temp.data==target){
+                    return true;
+                }
+                temp = temp.next;
+            }
+            return false;
+        }
+        //reverse list
+        void reverse() {
+            Node<Integer> prev = null;
+            Node<Integer> temp = head;
+            Node<Integer> next;
+            while (temp != null) {
+                next = temp.next;
+                temp.next = prev;
+                prev = temp;
+                temp = next;
+            }
+            head = prev;
+        }
     }
 
     public static void main(String[] args) {
@@ -200,6 +224,9 @@ public class Deletion_In_LinkedList {
         l.delete(3);
         l.display();
         l.updateData(1,20);
+        l.display();
+        System.out.println( l.searching(40));
+        l.reverse();
         l.display();
     }
 }
