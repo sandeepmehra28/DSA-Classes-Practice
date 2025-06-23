@@ -79,6 +79,7 @@ public class Deletion_In_LinkedList {
             head.data = head.next.data;
             head.next = head.next.next;
         }
+        //delete node using index
         void delete(int position){
             if(position>size&& position<=0){
                 System.out.println("Wrong Deletion..");
@@ -105,6 +106,7 @@ public class Deletion_In_LinkedList {
                 System.out.println("Deletion is successful...");
             }
         }
+        //insertion in head
         void insertHead(int data){
             Node<Integer> newNode = new Node<>(data);
             if(head==null){
@@ -118,6 +120,7 @@ public class Deletion_In_LinkedList {
             size++;
             System.out.println("insertion at head successful");
         }
+        //inertion in tail
         void insertTail(int data){
             Node<Integer> newNode = new Node<>(data);
             if(head==null){
@@ -134,6 +137,7 @@ public class Deletion_In_LinkedList {
             size++;
             System.out.println("insertion at tail successful");
         }
+       //insertion in specific position
         void insertion(int position , int data){
             if(position>size+1 && position<=0){
                 System.out.println("Wrong Insertion");
@@ -158,6 +162,7 @@ public class Deletion_In_LinkedList {
                 size++;
             }
         }
+        //display list
         void display(){
             Node<Integer> temp = head;
             while(temp!=null){
