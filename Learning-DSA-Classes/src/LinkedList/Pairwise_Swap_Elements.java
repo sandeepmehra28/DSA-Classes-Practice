@@ -3,7 +3,7 @@ package LinkedList;
 public class Pairwise_Swap_Elements {
   static class listNode<T>{
         T data ;
-        listNode next;
+        listNode<T> next;
         listNode(T data){
             this.data = data;
             this.next = null;
@@ -54,7 +54,7 @@ public class Pairwise_Swap_Elements {
           listNode<Integer> curr = head;
           while(curr!=null && curr.next!=null){
               Integer temp = curr.data;
-              curr.data = (Integer) curr.next.data;
+              curr.data = curr.next.data;
               curr.next.data = temp;
               curr = curr.next.next;
           }
@@ -79,7 +79,7 @@ public class Pairwise_Swap_Elements {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         mylist l = new mylist();
         l.ihead(10);
         l.itail(20);
