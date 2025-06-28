@@ -10,16 +10,15 @@ public class Remove_Loop {
             slow = slow.next;
 
             if (fast == slow) {
-                // Found loop
                 slow = head;
                 while (slow != fast) {
                     slow = slow.next;
                     fast = fast.next;
                 }
-                return slow; // Starting point of loop
+                return slow;
             }
         }
-        return null; // No loop
+        return null;
     }
     static boolean dectectCycle(utilNode head){
         utilNode fast = head;
@@ -37,12 +36,11 @@ public class Remove_Loop {
     static void removeLoop(utilNode head) {
         utilNode loopStart = firstNodeCycle(head);
         if (loopStart == null) return;
-
         utilNode ptr = loopStart;
         while (ptr.next != loopStart) {
             ptr = ptr.next;
         }
-        ptr.next = null; // Break the loop
+        ptr.next = null;
     }
    static void printList(utilNode head){
         utilNode temp  = head;
