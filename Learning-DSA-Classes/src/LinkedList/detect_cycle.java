@@ -1,23 +1,9 @@
 package LinkedList;
 
 
-class dcNode{
-    int data;
-    dcNode next;
-    dcNode(int data){
-        this.data = data;
-        this.next = null;
-    }
-}
+import java.util.Objects;
+
 public class detect_cycle {
-    static void  print(dcNode head){
-        dcNode temp = head;
-        while(temp!=null){
-            System.out.print(temp.data+" ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
     /**
      * detect loop or cycle
      * public static boolean detectLoop(dcNode head) {
@@ -31,9 +17,9 @@ public class detect_cycle {
      * return false;
      * }
      */
-    static boolean dectectCycle(dcNode head){
-        dcNode fast = head;
-        dcNode slow = head;
+    static boolean dectectCycle(utilNode head){
+        utilNode fast = head;
+        utilNode slow = head;
         while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
@@ -43,9 +29,9 @@ public class detect_cycle {
         }
         return false;
     }
-    static dcNode firstNodeCycle(dcNode head){
-        dcNode fast = head;
-        dcNode slow = head;
+    static utilNode firstNodeCycle(utilNode head){
+        utilNode fast = head;
+        utilNode slow = head;
         boolean found = false;
         while(fast!=null && fast.next!=null){
             slow = slow.next;
@@ -66,11 +52,11 @@ public class detect_cycle {
         return slow;
     }
     public static void main() {
-        dcNode a = new dcNode(10);
-        dcNode b = new dcNode(20);
-        dcNode c = new dcNode(30);
-        dcNode d = new dcNode(40);
-        dcNode e = new dcNode(50);
+        utilNode a = new utilNode(10);
+        utilNode b = new utilNode(20);
+        utilNode c = new utilNode(30);
+        utilNode d = new utilNode(40);
+        utilNode e = new utilNode(50);
         a.next = b;
         b.next= c;
         c.next=d;
@@ -78,6 +64,6 @@ public class detect_cycle {
         e.next = b;
         System.out.println(dectectCycle(a));
         a = firstNodeCycle(a);
-        System.out.println(a.data);
+        System.out.println(Objects.requireNonNull(a).data);
     }
 }
