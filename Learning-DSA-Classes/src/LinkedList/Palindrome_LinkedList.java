@@ -39,7 +39,7 @@ public class Palindrome_LinkedList {
     }
 
 
-    public static void main(String[] args) {
+    public static void main() {
         utilNode a = new utilNode(10);
         utilNode b = new utilNode(20);
         utilNode c = new utilNode(30);
