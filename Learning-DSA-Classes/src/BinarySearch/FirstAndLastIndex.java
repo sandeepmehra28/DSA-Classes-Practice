@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FirstAndLastIndex {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 3, 3, 4, 5, 5};
-        int target = 6;
+        int target = 5;
 //        System.out.printf("first index will be:%d\n" +
 //                "last index will be:%d", firstIndex(arr, target), lastIndex(arr, target));
         int[] ans = new int[2];

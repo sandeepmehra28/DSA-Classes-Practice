@@ -1,46 +1,31 @@
 package BinarySearch;
 
+import java.util.ArrayList;
+import java.util.Collections;
 public class practice {
     public static void main(String[] args) {
-        int[] arr = {10,20,30,40};
-        int students = 2;
-        int ans = bookAllocation(arr,students);
-        System.out.println(ans);
+    ArrayList<Integer> a = new ArrayList<>();
+    a.add(0,1);
+        a.add(1,2);
+        a.add(2,3);
+        a.add(3,4);
+        a.add(4,5);
+        a.add(5,6);
+        int m = 3;
+        System.out.println(a);
+        reverseArray(a,m);
+        System.out.println(a);
     }
-    static  int bookAllocation(int[] arr ,int students){
-        int start = Integer.MIN_VALUE;
-        int end=0;
-        for(int i = 0;i<arr.length;i++){
-            if(arr[i]>start){
-               start = arr[i];
-            }
-            end+=arr[i];
-        }
-        int res = -1;
-        while(start<=end){
-            int mid = start+(end-start)/2;
-            if(isPossible(arr,mid,students)){
-                res = mid;
-                end = mid-1;
-            }else{
-                start = mid+1;
-            }
-        }
-        return res;
+    public static void reverseArray(ArrayList<Integer> arr, int m)
+    {
+        int start = m+1;
+        int end = arr.size()-1;
+        while (start<=end){
+        Collections.swap(arr,start,end);
+        start++;
+        end--;
     }
-    static boolean isPossible(int[] arr, int mid, int students){
-        int cu = 1;
-        int p = 0;
-        for(int i = 0;i< arr.length;i++){
-            p+=arr[i];
-            if(p>mid){
-                cu+=1;
-                p = arr[i];
-            }
-            if(cu>students){
-                return false;
-            }
-        }
-        return true;
+
     }
+
 }

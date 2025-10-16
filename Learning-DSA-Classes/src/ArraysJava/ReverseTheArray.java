@@ -2,6 +2,7 @@ package ArraysJava;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class ReverseTheArray {
     public static void main(String[] args) {
@@ -21,6 +22,16 @@ public class ReverseTheArray {
             arr[r]=temp;
             l++;
             r--;
+        }
+    }
+    public static void reverseArray(ArrayList<Integer> arr, int m)
+    {
+        int start = m+1;
+        int end = arr.size()-1;
+        while (start<=end){
+            Collections.swap(arr,start,end);
+            start++;
+            end--;
         }
     }
 }
